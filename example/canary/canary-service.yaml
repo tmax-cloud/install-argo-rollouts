@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: canary-service
+spec:
+  selector:
+    app: canary
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
+    nodePort: 30081
+  type: NodePort
